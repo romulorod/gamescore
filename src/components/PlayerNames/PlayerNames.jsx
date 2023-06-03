@@ -1,13 +1,17 @@
 import React from 'react';
 
 export const PlayerNames = ({ setShowPlayerNames }) => {
+  function capitalizeName(name) {
+    return name[0].toUpperCase() + name.slice(1);
+  }
+
   function onSubmit(event) {
     event.preventDefault();
     const form = event.target.elements;
 
     const players = [...form].reduce((acc, curr) => {
       if (curr.type === 'text' && curr.value) {
-        acc.push({ playerName: curr.value, game1: '0', game2: '0', game3: '0' });
+        acc.push({ playerName: capitalizeName(curr.value), game1: '0', game2: '0', game3: '0' });
       }
       return acc;
     }, []);

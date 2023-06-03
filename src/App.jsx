@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { PlayerNames } from './components/PlayerNames/PlayerNames';
 import { ScoreTable } from './components/ScoreTable/ScoreTable';
+import { Button, Space } from 'antd';
 
 function App() {
   const [showPlayerNames, setShowPlayerNames] = React.useState(false);
@@ -11,14 +12,27 @@ function App() {
       {start && (
         <>
           <p>Welcome to the Card Game Score!</p>
-          <button
-            onClick={() => {
-              setStart(false);
-              setShowPlayerNames(true);
-            }}
-          >
-            Start!
-          </button>
+          <Space>
+            <Button
+              className='home-button'
+              onClick={() => {
+                setStart(false);
+                setShowPlayerNames(true);
+              }}
+            >
+              Start New Game!
+            </Button>
+            <Button
+              className='home-button'
+              disabled={!JSON.parse(localStorage.getItem('gameScore'))}
+              onClick={() => {
+                setStart(false);
+                setShowPlayerNames(false);
+              }}
+            >
+              Load Last Game!
+            </Button>
+          </Space>
         </>
       )}
       {showPlayerNames && <PlayerNames setShowPlayerNames={setShowPlayerNames} />}
