@@ -1,0 +1,15 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.vertical-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.vertical-form input {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
