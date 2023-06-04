@@ -11,7 +11,7 @@ export const PlayerNames = ({ setShowPlayerNames }) => {
 
     const players = [...form].reduce((acc, curr) => {
       if (curr.type === 'text' && curr.value) {
-        acc.push({ playerName: capitalizeName(curr.value), game1: '0', game2: '0', game3: '0' });
+        acc.push({ playerName: capitalizeName(curr.value), game1: 0, game2: 0, game3: 0 });
       }
       return acc;
     }, []);

@@ -1,4 +1,4 @@
-import { Button, Col, Input, Row } from 'antd';
+import { Button, Col, InputNumber, Row } from 'antd';
 import React, { useState } from 'react';
 import { AiOutlineCrown } from 'react-icons/ai';
 import { ScoreTable } from './ScoreTable';
@@ -12,9 +12,9 @@ export const ScoreContainer = ({ setStart }) => {
       const { playerName, game1, game2, game3 } = player;
       return {
         playerName,
-        game1: Number(game1),
-        game2: Number(game2),
-        game3: Number(game3),
+        game1,
+        game2,
+        game3,
       };
     });
     setData(nextData);
@@ -40,14 +40,14 @@ export const ScoreContainer = ({ setStart }) => {
   const renderEditableCell = (text, record, column) => {
     const isEditing = editingIndex === record.key && column.editable;
     return isEditing ? (
-      <Input
+      <InputNumber
         defaultValue={text}
         style={{
           width: 50,
         }}
         id={column.dataIndex}
-        onChange={(e) => {
-          record[column.dataIndex] = e.target.value;
+        onChange={(value) => {
+          record[column.dataIndex] = value;
         }}
         onBlur={() => saveValue(record, column)}
         onKeyUp={(e) => {
