@@ -12,9 +12,9 @@ export const ScoreContainer = ({ setStart }) => {
       const { playerName, game1, game2, game3 } = player;
       return {
         playerName,
-        game1,
-        game2,
-        game3,
+        game1: Number(game1),
+        game2: Number(game2),
+        game3: Number(game3),
       };
     });
     setData(nextData);
