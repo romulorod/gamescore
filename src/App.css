@@ -13,8 +13,8 @@
   border-radius: 5px;
   padding: 0.3rem;
 }
-.home-button,
-.home-button:disabled {
+.btn,
+.btn:disabled {
   color: white;
   background-color: #1a1a1a;
 }
