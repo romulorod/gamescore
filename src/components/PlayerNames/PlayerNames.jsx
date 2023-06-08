@@ -32,6 +32,8 @@ export const PlayerNames = ({ setShowPlayerNames }) => {
         <input type='text' id='player3' name='player3' />
         <label htmlFor='player4'>Player 4:</label>
         <input type='text' id='player4' name='player4' />
+<label htmlFor='player5'>Player 5:</label>
+        <input type='text' id='player5' name='player5' />
         <button type='submit'>Submit</button>
       </form>
     </>
